@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CharacterCard from './CharacterCard';
 import _ from 'lodash';
+const refreshPage = () => window.location.reload(false); 
 const prepareStateFromWord = (given_word) => {
     let word = given_word.toUpperCase()
     let chars = _.shuffle(Array.from(word))
@@ -38,6 +39,8 @@ export default class WordCard extends Component {
                 this.setState({ guess: [], completed: true })
             } else {
                 this.setState({ guess: [], attempt: this.state.attempt + 1 })
+                refreshPage()
+                
             }
         }
     }
