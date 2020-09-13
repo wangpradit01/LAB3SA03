@@ -46,6 +46,7 @@ export default class WordCard extends Component {
     }
     render() {
         console.log(this.state);
+        console.log('hello');
         return (
             <div>
                 {
